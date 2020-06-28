@@ -4,6 +4,7 @@ services:
   vobe_web:
     image: caddy
     container_name: vobe-caddy
+    restart: always
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy-data:/data
