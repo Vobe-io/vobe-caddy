@@ -1,0 +1,18 @@
+#import this snippet to a site if you want that site to go into maintenance mode
+(maintenance) {
+    redir https://maintenance.vobe.io
+}
+
+vobe.io, www.vobe.io {
+    reverse_proxy vobe_web:80
+}
+
+portainer.vobe.io {
+    reverse_proxy portainer:9000
+}
+
+maintenance.vobe.io {
+    root * /usr/share/caddy/maintenance
+    try_files {path} /index.html
+    file_server
+}
