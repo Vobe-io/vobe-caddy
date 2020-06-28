@@ -3,7 +3,7 @@ version: "3.7"
 services:
   vobe_web:
     image: caddy
-    container_name: vobe-web
+    container_name: vobe-caddy
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - caddy-data:/data
